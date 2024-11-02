@@ -1,12 +1,20 @@
 #include <fstream>
 #include <iostream>
 
-std::ofstream logFile("log.txt", std::ios::app); // Abre ou cria o arquivo em modo de anexação
-if (logFile.is_open()) {
-    logFile << "Testando log - Emulador iniciado\n";
-    logFile << "Valor de RETRO_DEVICE::JOYPAD: " << static_cast<int>(RETRO_DEVICE::JOYPAD) << std::endl;
+void logDeviceInfo() {
+    std::ofstream logFile("C:\\Users\\SeuUsuario\\Documents\\BizHawk\\log.txt", std::ios::app); // Modifique o caminho conforme necessário
+
+    if (logFile.is_open()) {
+        logFile << "=== Iniciando Log ===" << std::endl;
+        logFile << "Testando log - Emulador iniciado\n";
+        logFile << "Valor de RETRO_DEVICE::JOYPAD: " << static_cast<int>(RETRO_DEVICE::JOYPAD) << std::endl;
+        logFile << "=== Fim do Log ===" << std::endl;
+        logFile.close();
+        std::cout << "Arquivo de log criado com sucesso." << std::endl;
+    } else {
+        std::cerr << "Erro ao abrir o arquivo de log." << std::endl;
+    }
 }
-logFile.close(); // Fecha o arquivo após a escrita
 
 #include <cstdint>
 #include <climits>
