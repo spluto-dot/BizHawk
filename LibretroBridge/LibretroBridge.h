@@ -3,8 +3,8 @@
 
 std::ofstream logFile("log.txt", std::ios::app); // Abre ou cria o arquivo em modo de anexação
 if (logFile.is_open()) {
+    logFile << "Testando log - Emulador iniciado\n";
     logFile << "Valor de RETRO_DEVICE::JOYPAD: " << static_cast<int>(RETRO_DEVICE::JOYPAD) << std::endl;
-    // Adicione outras verificações aqui, se necessário
 }
 logFile.close(); // Fecha o arquivo após a escrita
 
