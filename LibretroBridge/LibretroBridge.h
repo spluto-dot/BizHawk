@@ -1,21 +1,3 @@
-#include <fstream>
-#include <iostream>
-
-void logDeviceInfo() {
-    std::ofstream logFile("C:\\log.txt", std::ios::app); // Salva o log no C:\
-
-    if (logFile.is_open()) {
-        logFile << "=== Iniciando Log ===" << std::endl;
-        logFile << "Testando log - Emulador iniciado\n";
-        logFile << "Valor de RETRO_DEVICE::JOYPAD: " << static_cast<int>(RETRO_DEVICE::JOYPAD) << std::endl;
-        logFile << "=== Fim do Log ===" << std::endl;
-        logFile.close();
-        std::cout << "Arquivo de log criado com sucesso em C:\\log.txt" << std::endl;
-    } else {
-        std::cerr << "Erro ao abrir o arquivo de log em C:\\log.txt" << std::endl;
-    }
-}
-
 #include <cstdint>
 #include <climits>
 
